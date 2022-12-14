@@ -37,10 +37,3 @@ For demonstration, I used the *getInstance* method in *SeleniumManager* to print
 On execution, the browser drivers are downloaded in */Users/applemacbook_pro/.cache/selenium* folder. These would be re-downloaded in case there is any update in the browser version.
 
 <img width="728" alt="CMD_Selenium_Manager" src="https://user-images.githubusercontent.com/1688653/207521761-bcebdaa1-e30a-4743-8b62-8d350d98ab3f.png">
-
-## Have Feedback?
-Feel free to fork the repo and contribute to make it better! Email to [himanshu[dot]sheth[at]gmail[dot]com](mailto:himanshu.sheth@gmail.com) for any queries or ping me on the following social media sites:
-
-<b>Twitter</b>: [@hjsblogger](https://www.twitter.com/hjsblogger)
-<br/>
-<b>LinkedIn</b>: [@hjsblogger](https://linkedin.com/in/hjsblogger)
