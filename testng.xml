@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="[Demo] Selenium Manager" parallel="methods" thread-count="3">
-<listeners>
-	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
-	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
-</listeners>
-
-	<test name="[Demo] Selenium Manager">
-		<classes>
-			<class name="SeleniumManagerDemo"> </class>
-		</classes>
-	</test>
+<suite name="Selenium Manager Demo Suite">
+    <test name="Selenium Manager tests">
+        <classes>
+            <class name="SeleniumManagerDemo"/>
+        </classes>
+    </test>
+    <test name="Selenium Manager Latest tests">
+        <classes>
+            <class name="SeleniumWebDriverManagerTests">
+                <methods>
+                    <include name="testOnChromeOldVersionWithSeleniumManager"/>
+                    <include name="testChromeLatestVersionWithSeleniumManager"/>
+                    <include name="testChromeStableWithSeleniumManager"/>
+                    <include name="testChromeBetaWithSeleniumManager"/>
+                    <include name="testChromeDevWithSeleniumManager"/>
+                    <include name="testChromeCanaryWithSeleniumManager"/>
+                    <include name="testOnChromeOldVersionWithWebDriverManager"/>
+                    <include name="testChromeLatestVersionWithWebDriverManager"/>
+                    <include name="testOnChromeBySettingEnvVariablePath"/>
+                    <include name="testOnChromeBySettingBinaryPathUsingSetProperty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
