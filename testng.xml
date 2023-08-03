@@ -12,11 +12,13 @@
                 <methods>
                     <exclude name="testOnChromeOldVersionWithSeleniumManager"/>
                     <exclude name="testChromeLatestVersionWithSeleniumManager"/>
-                    <include name="testChromeVersionsWithSeleniumManager"/>
+                    <exclude name="testChromeVersionsWithSeleniumManager"/>
                     <exclude name="testOnChromeOldVersionWithWebDriverManager"/>
                     <exclude name="testChromeLatestVersionWithWebDriverManager"/>
                     <exclude name="testOnChromeBySettingEnvVariablePath"/>
                     <exclude name="testOnChromeBySettingBinaryPathUsingSetProperty"/>
+                    <include name="testOnFirefoxLatestVersionWithSeleniumManager"/>
+                    <include name="testOnEdgeLatestVersionWithSeleniumManager"/>
                 </methods>
             </class>
         </classes>

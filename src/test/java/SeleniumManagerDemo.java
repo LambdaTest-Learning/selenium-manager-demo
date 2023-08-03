@@ -11,8 +11,7 @@ public class SeleniumManagerDemo
             = new ThreadLocal<WebDriver>();
 
     String testURL = "https://www.lambdatest.com";
-
-    @Ignore
+    
     @Test(description="Demonstration of Toggle Buttons on LambdaTest Selenium Grid")
     public void testEdge() throws InterruptedException {
         /* Selenium Manager - MS Edge */
