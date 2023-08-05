@@ -1,4 +1,3 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,22 +14,13 @@ import java.util.List;
 import static org.testng.Assert.assertEquals;
 
 public class SeleniumWebDriverManagerTests {
-    private WebDriver driver;
 
+    private WebDriver driver;
     @Test
     public void testOnChromeOldVersionWithSeleniumManager() {
         final ChromeOptions options = new ChromeOptions();
-        options.setBrowserVersion("114");
+        options.setBrowserVersion("113");
         this.driver = new ChromeDriver(options);
-        this.driver.get("https://ecommerce-playground.lambdatest.io/");
-
-        assertEquals(this.driver.getTitle(), "Your Store");
-        System.out.println(this.driver.getTitle());
-    }
-
-    @Test
-    public void testChromeLatestVersionWithSeleniumManager() {
-        this.driver = new ChromeDriver();
         this.driver.get("https://ecommerce-playground.lambdatest.io/");
 
         assertEquals(this.driver.getTitle(), "Your Store");
@@ -51,43 +41,46 @@ public class SeleniumWebDriverManagerTests {
         final ChromeOptions options = new ChromeOptions();
         options.setBrowserVersion(browserVersion);
         this.driver = new ChromeDriver(options);
+
         this.driver.get("https://ecommerce-playground.lambdatest.io/");
 
         assertEquals(this.driver.getTitle(), "Your Store");
     }
 
     @Test
-    public void testOnChromeOldVersionWithWebDriverManager() {
+    public void testChromeLatestVersionWithSeleniumManager() {
+        this.driver = new ChromeDriver();
+        this.driver.get("https://ecommerce-playground.lambdatest.io/");
+
+        assertEquals(this.driver.getTitle(), "Your Store");
+    }
+
+    @Test
+    public void testOnChromeOldVersion112() {
         final ChromeOptions options = new ChromeOptions();
-        options.setBrowserVersion("113");
-        this.driver = WebDriverManager.chromedriver().capabilities(options).create();
-        this.driver.get("https://ecommerce-playground.lambdatest.io/");
+        options.setBrowserVersion("112");
 
-        assertEquals(this.driver.getTitle(), "Your Store");
-        System.out.println(this.driver.getTitle());
-    }
-
-    @Test
-    public void testChromeLatestVersionWithWebDriverManager() {
-        this.driver = WebDriverManager.chromedriver().create();
+        this.driver = new ChromeDriver(options);
         this.driver.get("https://ecommerce-playground.lambdatest.io/");
 
         assertEquals(this.driver.getTitle(), "Your Store");
     }
+
 
     @Test
     public void testOnChromeBySettingEnvVariablePath() {
 
-        //Provide the chromedriver.exe path in the Environment variable before running this test.
-        this.driver = new ChromeDriver();
-        this.driver.get("https://ecommerce-playground.lambdatest.io/");
+        //Update the chromedriver.exe path in the Environment variable before running this test.
+        final WebDriver driver = new ChromeDriver();
+        driver.get("https://ecommerce-playground.lambdatest.io/");
+        driver.quit();
 
     }
 
     @Test
     public void testOnChromeBySettingBinaryPathUsingSetProperty() {
 
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/test/resources/chromedriver_mac_arm64/chromedriver");
         this.driver = new ChromeDriver();
         this.driver.get("https://ecommerce-playground.lambdatest.io/");
 
