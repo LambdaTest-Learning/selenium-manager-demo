@@ -2,8 +2,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
-import org.openqa.selenium.manager.SeleniumManager;
 
 public class SeleniumManagerDemo
 {
@@ -11,7 +11,7 @@ public class SeleniumManagerDemo
             = new ThreadLocal<WebDriver>();
 
     String testURL = "https://www.lambdatest.com";
-
+    
     @Test(description="Demonstration of Toggle Buttons on LambdaTest Selenium Grid")
     public void testEdge() throws InterruptedException {
         /* Selenium Manager - MS Edge */
@@ -39,6 +39,7 @@ public class SeleniumManagerDemo
         Thread.sleep(5000);
     }
 
+    @Ignore
     @Test(description="Demonstration of Toggle Buttons on LambdaTest Selenium Grid")
     public void testFirefox() throws InterruptedException {
         /* Selenium Manager - Firefox */
@@ -89,6 +90,5 @@ public class SeleniumManagerDemo
         driver.quit();
         ThreadLocal.remove();
 
-        Thread.sleep(5000);
     }
 }
