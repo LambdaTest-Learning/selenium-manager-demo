@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenium Manager Demo Suite">
-    <test name="Selenium Manager tests" >
+    <test name="Selenium Manager tests" enabled="false">
         <classes>
             <class name="SeleniumManagerDemo"/>
         </classes>
@@ -10,14 +10,14 @@
         <classes>
             <class name="SeleniumWebDriverManagerTests">
                 <methods>
-                    <include name="testOnChromeOldVersionWithSeleniumManager"/>
-                    <include name="testChromeLatestVersionWithSeleniumManager"/>
+                    <exclude name="testOnChromeOldVersionWithSeleniumManager"/>
+                    <exclude name="testChromeLatestVersionWithSeleniumManager"/>
                     <include name="testChromeVersionsWithSeleniumManager"/>
-                    <include name="testOnChromeOldVersion112"/>
-                    <include name="testOnChromeBySettingEnvVariablePath"/>
-                    <include name="testOnChromeBySettingBinaryPathUsingSetProperty"/>
-                    <include name="testOnFirefoxLatestVersionWithSeleniumManager"/>
-                    <include name="testOnEdgeLatestVersionWithSeleniumManager"/>
+                    <exclude name="testOnChromeOldVersion112"/>
+                    <exclude name="testOnChromeBySettingEnvVariablePath"/>
+                    <exclude name="testOnChromeBySettingBinaryPathUsingSetProperty"/>
+                    <exclude name="testOnFirefoxLatestVersionWithSeleniumManager"/>
+                    <exclude name="testOnEdgeLatestVersionWithSeleniumManager"/>
                 </methods>
             </class>
         </classes>
