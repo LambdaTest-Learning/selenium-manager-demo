@@ -16,6 +16,7 @@ import static org.testng.Assert.assertEquals;
 public class SeleniumWebDriverManagerTests {
 
     private WebDriver driver;
+
     @Test
     public void testOnChromeOldVersionWithSeleniumManager() {
         final ChromeOptions options = new ChromeOptions();
